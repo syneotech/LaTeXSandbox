@@ -39,25 +39,29 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-neutral-50 dark:bg-neutral-950 flex flex-col transition-colors duration-200">
+    <div className="h-screen bg-neutral-950 flex flex-col overflow-hidden">
       <Header theme={theme} toggleTheme={toggleTheme} />
 
-      <main className="flex-1 container mx-auto px-4 py-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 h-[calc(100vh-120px)]">
+      <main className="flex-1 overflow-hidden">
+        <div className="h-full grid grid-cols-1 lg:grid-cols-2 gap-0 lg:gap-px bg-neutral-800">
           {/* Left: Editor */}
-          <EditorPane
-            code={rawCode}
-            onChange={setRawCode}
-            templates={TEMPLATES}
-            selectedTemplate={selectedTemplate}
-            onTemplateSelect={handleTemplateSelect}
-          />
+          <div className="h-full bg-neutral-950 overflow-hidden">
+            <EditorPane
+              code={rawCode}
+              onChange={setRawCode}
+              templates={TEMPLATES}
+              selectedTemplate={selectedTemplate}
+              onTemplateSelect={handleTemplateSelect}
+            />
+          </div>
 
           {/* Right: Preview */}
-          <PreviewPane
-            code={debouncedCode}
-            onError={setRenderError}
-          />
+          <div className="h-full bg-neutral-950 overflow-hidden border-t lg:border-t-0 lg:border-l border-neutral-800">
+            <PreviewPane
+              code={debouncedCode}
+              onError={setRenderError}
+            />
+          </div>
         </div>
       </main>
     </div>

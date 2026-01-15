@@ -9,36 +9,33 @@ interface HeaderProps {
 
 export const Header: React.FC<HeaderProps> = ({ theme, toggleTheme }) => {
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-gray-200 dark:border-neutral-800 bg-white/80 dark:bg-neutral-950/80 backdrop-blur-md">
-      <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-        <div className="flex items-center gap-4">
-          <div>
-            <h1 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
-              LaTeX Sandbox
-            </h1>
-            <p className="text-xs text-gray-500 dark:text-neutral-400 hidden sm:block">
-              Real-Time Math Rendering
-            </p>
-          </div>
-          <a
-            href="https://syneo.tech"
-            className="text-sm font-medium text-blue-600 dark:text-blue-400 hover:underline"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            SyneoTech
-          </a>
+    <header className="sticky top-0 z-50 w-full border-b border-neutral-800 bg-neutral-950/80 backdrop-blur-md">
+      <div className="w-full px-4 sm:px-6 h-16 flex items-center justify-between">
+        {/* Left: SyneoTech Brand */}
+        <a
+          href="https://syneo.tech"
+          className="text-lg font-bold tracking-tighter text-white hover:text-neutral-300 transition-colors"
+        >
+          SyneoTech
+        </a>
+
+        {/* Center: Tool Name */}
+        <div className="absolute left-1/2 -translate-x-1/2 text-center hidden sm:block">
+          <h1 className="text-lg font-bold tracking-tight text-white">
+            LaTeX Sandbox
+          </h1>
         </div>
 
-        <div className="flex items-center gap-4">
-          <div className="hidden md:flex items-center gap-2 px-3 py-1.5 bg-green-50 dark:bg-green-900/20 text-green-700 dark:text-green-400 rounded-full border border-green-200 dark:border-green-800 text-xs font-medium">
+        {/* Right: Privacy Badge + Theme Toggle */}
+        <div className="flex items-center gap-3">
+          <div className="hidden lg:flex items-center gap-2 px-3 py-1.5 bg-green-900/20 text-green-400 rounded-full border border-green-800 text-xs font-medium">
             <ShieldCheck className="w-4 h-4" />
-            <span>100% Private - Processed on your device</span>
+            <span>100% Private</span>
           </div>
 
           <button
             onClick={toggleTheme}
-            className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-neutral-800 text-gray-600 dark:text-neutral-400 transition-colors"
+            className="p-2 rounded-full hover:bg-neutral-800 text-neutral-400 hover:text-white transition-colors"
             aria-label="Toggle theme"
           >
             {theme === 'light' ? <Moon className="w-5 h-5" /> : <Sun className="w-5 h-5" />}

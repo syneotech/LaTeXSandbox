@@ -39,9 +39,9 @@ export const PreviewPane: React.FC<PreviewPaneProps> = ({ code, onError }) => {
   }, [renderResult]);
 
   return (
-    <div className="flex flex-col h-full gap-4">
-      <div className="flex items-center justify-between">
-        <h2 className="text-sm font-semibold text-neutral-400 uppercase tracking-wide">
+    <div className="flex flex-col h-full p-4 gap-4">
+      <div className="flex items-center justify-between shrink-0">
+        <h2 className="text-xs font-semibold text-neutral-500 uppercase tracking-wider">
           Preview
         </h2>
         <ExportToolbar

@@ -19,9 +19,9 @@ export const EditorPane: React.FC<EditorPaneProps> = ({
   onTemplateSelect,
 }) => {
   return (
-    <div className="flex flex-col h-full gap-4">
+    <div className="flex flex-col h-full p-4 gap-4">
       <div className="shrink-0">
-        <h2 className="text-sm font-semibold text-neutral-400 uppercase tracking-wide mb-3">
+        <h2 className="text-xs font-semibold text-neutral-500 uppercase tracking-wider mb-3">
           LaTeX Code
         </h2>
         <Toolbar
